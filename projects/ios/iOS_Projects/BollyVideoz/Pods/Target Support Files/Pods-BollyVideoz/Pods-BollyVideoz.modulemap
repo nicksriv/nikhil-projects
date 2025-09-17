@@ -1,0 +1,6 @@
+framework module Pods_BollyVideoz {
+  umbrella header "Pods-BollyVideoz-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ECA74EFAF6D64736020505CF7634C19E49D2EB53",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ECA74EFAF6D64736020505CF7634C19E49D2EB53" : 0,
+    "D59A063976BFC094A5A2FF0E0AFBD21A7303F5F0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6A230D32-65F8-4E73-9E19-5F7EF5F24001",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ECA74EFAF6D64736020505CF7634C19E49D2EB53" : "BollyVideoz",
+    "D59A063976BFC094A5A2FF0E0AFBD21A7303F5F0" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BollyVideoz",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BollyVideoz.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicksriv\/workspace.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D59A063976BFC094A5A2FF0E0AFBD21A7303F5F0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gambhirpulkit\/bvz-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ECA74EFAF6D64736020505CF7634C19E49D2EB53"
+    }
+  ]
+}

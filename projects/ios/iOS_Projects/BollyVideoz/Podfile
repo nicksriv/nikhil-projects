@@ -1,0 +1,14 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'BollyVideoz' do
+use_frameworks!
+pod 'HanekeSwift'
+pod 'Fabric'
+pod 'Crashlytics'
+end
+
+target 'BollyVideozTests' do
+
+end
+
