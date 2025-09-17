@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-job-service
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-job-service
+  template:
+    metadata:
+      labels:
+        app: api-job-service
+    spec:
+      spec:
+      volumes:
+        - name: my-vol
+          hostPath:
+            path: /storage
+      containers:
+        - name: api-job-service
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/job_prod:latest
+          imagePullPolicy: 'Always'
+          volumeMounts:
+            - name: my-vol
+              mountPath: /var
+          ports:
+            - containerPort: 9090
+          env:
+            - name: PORT
+              value: "9090"
+      imagePullSecrets:
+      - name: ecr-v5prod-auth        
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-job-service
+  namespace: prod
+spec:
+  ports:
+    - port: 9090
+  selector:
+    app: api-job-service

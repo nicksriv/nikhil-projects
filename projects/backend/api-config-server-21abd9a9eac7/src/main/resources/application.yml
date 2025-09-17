@@ -1,0 +1,39 @@
+ server:
+  port: 9012
+ spring:
+    cloud:
+      config:
+        server:
+          git:
+            uri: git@bitbucket.org:brandpulse-development/config-preprod.git
+            ignoreLocalSshSettings: true
+            cloneOnStart: true
+            default-label: develop
+            privateKey: |
+                        -----BEGIN RSA PRIVATE KEY-----
+                        MIIEogIBAAKCAQEA5skJ2P8XEkk5F/9HbMQ/c8A12ho/lLdU4Q00RZfAQnifjlts
+                        rJNH5r3BoLAu6+7Tlq9jSjy0Rj8VvpGGEhwEoY9ubbCGcf8+H+Hj14mCfKXvtAfF
+                        gPe3E3LGuA7rQGrWEOY05T68WyYywFh8m9vpu2oCvWQ0K7ui/UY5vzb1twqL1q1A
+                        C4l3mv2uXxXSqXwsDkrjtcB953Kj0oGHGjo42z8AUrVXDYGLdKdCzG2J5POXx7zW
+                        Km+C0BfWhofUp+SSt+EBl0fcEmIBRKDXDX1VM10IPbBnoAwyLWKfO9MYBIZRapd/
+                        B1+zAJks0EGf38fpPpSsBw88GipfWfEu+7fMFQIDAQABAoIBAGsa2/4gDMYIw312
+                        lOBOh6AhkRyCWAWdu7+iUCMIFUsEDhCUL3A7/f+BCy6W9X+7W+kvxmW6nHOJbX7+
+                        rHkVFbUhCr/PT+Xx7hP/0qzB/ZP5srAbdzauQAG/n6fmDJnduzEmlV/a6LFond8U
+                        cegnfGblARaCPZAaSb8/aydpy0lBstol6PjWXXg3/MZttz3YnRfPiqQ+aIGTFKjs
+                        rTRSABi66uN9kKLeNvRPd4JEuWn7kIUTQB1D9u7Z+MjekHiVpO2nsuh9irrmT7Ak
+                        b3GEc/aqF0Aqs3Vi2PgE3pRiey2rt49/8stHF10Q0o3m4vvTz8zaATp7donsrlYs
+                        UvyPR2ECgYEA/xvDGBoI49ibKEYTAN8jGSze7DAAqAXxL5RbLI8G3eOAHGYQVlDN
+                        +2AeyU1ArlIunVYSx3yZCkopKAEoqLcM3K83/UzJoaT+V32yAGvUnZMnOaWCxA54
+                        EIacvi/CKOpaFHg2eeq8NO7oj4X21WD/hl5AJq+2nKDfxxrK7ghZit0CgYEA55eD
+                        48Kb3uAPGp5qLGKcYluWc5sv0OXx4pJKbWxCI+xqmSl8irHjD5VZpyTThf4k3ihn
+                        0JMn0YZnjSywOTiuDTA0uWEFdfCB5nE4/qmjnvrrLNHIsJbAoOytOrf47sOoCCmf
+                        i/C2ORut36sOup1uL3okaMDYoIF80xcnua8DJpkCgYA58e5gfRlj14F2pmQOoKBy
+                        SXThJQ4hHChqbEJBXsNqhxBEYxJ26KfA31Ze1wNIFTatWi2tzilc4vdyNMEtgVaU
+                        keAf0t9Brh5vdQeHfPawTApu159aNQckic70jBiH/qMzXxLQonbZdyKv5vfoA75G
+                        oQXlQ6gw74Gk0fsiEhd0qQKBgHvY+/AF92MVwR4ED1VTGrxCrE+Acu6suVDn2KNx
+                        nGEnoc3scKye+oUv4jTPLcrfIQoo43OX7lhPHvtRJaBEHlfxKpDkQI5UorMAY3FU
+                        eKqhFrjuKvu8cqDcULsw/Q96VFahI7ArdtdNZQtSp9rGK9F56RSX5IDZHk6oeFcF
+                        L5MpAoGAKimufUYGrArIP/mfyos1Y44A41PNVFTe+ByDbk25dBK/RF0OPLufroQh
+                        WtXp3R/twAxSQk+cgl1H+hW0liusOw0fbtGOxGf1HaTjzrFdOsCBNz5jLkJJXyjW
+                        EwTeXGL9v/jM1F2S7UewzOnGW3UifAANDilVH7B06x7q+m9ELWU=
+                        -----END RSA PRIVATE KEY-----

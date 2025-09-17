@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-configserver
+  namespace: uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-configserver
+  template:
+    metadata:
+      labels:
+        app: api-configserver
+    spec:
+      containers:
+        - name: api-configserver
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/api-config-server
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9012
+          env:
+            - name: PORT
+              value: "9012"
+      imagePullSecrets:
+      - name: ecr-uat-auth          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-configserver
+  namespace: uat
+spec:
+  ports:
+    - port: 9012
+  selector:
+    app: api-configserver

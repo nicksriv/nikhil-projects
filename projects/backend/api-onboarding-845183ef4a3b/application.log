@@ -1,0 +1,17 @@
+2021-09-17 19:31:15.708  INFO 28328 --- [restartedMain] c.wavelabs.sb.ScreenbuilderApplication   : Starting ScreenbuilderApplication using Java 16.0.1 on nblap308 with PID 28328 (C:\Users\shaikhsardar\git\client-onboarding\target\classes started by shaikhsardar in C:\Users\shaikhsardar\git\client-onboarding)
+2021-09-17 19:31:15.709  INFO 28328 --- [restartedMain] c.wavelabs.sb.ScreenbuilderApplication   : No active profile set, falling back to default profiles: default
+2021-09-17 19:31:15.947  INFO 28328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-09-17 19:31:15.971  INFO 28328 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 MongoDB repository interfaces.
+2021-09-17 19:31:16.030  INFO 28328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-09-17 19:31:16.031  INFO 28328 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-09-17 19:31:16.031  INFO 28328 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-17 19:31:16.046  INFO 28328 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-09-17 19:31:16.046  INFO 28328 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 335 ms
+2021-09-17 19:31:16.063  INFO 28328 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-09-17 19:31:16.066  INFO 28328 --- [cluster-rtt-ClusterId{value='61449fac1132fb057aef3dc7', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:2619}] to localhost:27017
+2021-09-17 19:31:16.066  INFO 28328 --- [cluster-ClusterId{value='61449fac1132fb057aef3dc7', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:2620}] to localhost:27017
+2021-09-17 19:31:16.066  INFO 28328 --- [cluster-ClusterId{value='61449fac1132fb057aef3dc7', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1196400}
+2021-09-17 19:31:16.081  INFO 28328 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-09-17 19:31:16.214  INFO 28328 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-17 19:31:16.355  INFO 28328 --- [restartedMain] c.wavelabs.sb.ScreenbuilderApplication   : Started ScreenbuilderApplication in 0.678 seconds (JVM running for 83.249)
+2021-09-17 19:31:16.358  INFO 28328 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

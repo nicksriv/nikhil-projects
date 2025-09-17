@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auditing-service
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auditing-service
+  template:
+    metadata:
+      labels:
+        app: auditing-service
+    spec:
+      containers:
+        - name: auditing-service
+          image: registry.gitlab.com/ratnakumarn/auditing-service:latest
+          imagePullPolicy: 'Always'
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PORT
+              value: "8080"
+      imagePullSecrets:
+      - name: gitlab-auth
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auditing-service
+  namespace: dev
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30859
+  selector:
+    app: auditing-service

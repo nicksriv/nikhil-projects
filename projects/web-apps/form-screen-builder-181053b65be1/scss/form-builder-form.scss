@@ -1,0 +1,130 @@
+input[type="date"]:before {
+    content: attr(placeholder);
+    color: #aaa;
+    margin-right: 0.5em;
+}
+
+input[type="date"] {
+    width: 200px;
+}
+
+.validation-error {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 99999999;
+    ul {
+        width: auto;
+    }
+    .dismiss-modal-button {
+        margin-top: 10px;
+    }
+}
+
+.readable-form-preview {
+    pointer-events: none;
+}
+
+.scrollable-preview {
+    overflow: auto !important;
+    //padding: 10px !important;
+}
+
+.scrollable-preview::-webkit-scrollbar {
+    display: none;
+}
+
+.react-form-builder-form {
+    position: relative;
+    .preview-page-break {
+        padding: 5px 0;
+        border-top: 2px dotted #ccc;
+        border-bottom: 2px dotted #ccc;
+        background: #eee;
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+        margin: 5px 0;
+        background: repeating-linear-gradient( 45deg, #fff, #fff 10px, #eee 10px, #eee 20px);
+    }
+    .rfb-item.alwaysbreak {
+        page-break-before: always;
+    }
+    .rfb-item.nobreak:before {
+        clear: both;
+    }
+    .rfb-item.nobreak {
+        page-break-inside: avoid;
+    }
+    .rfb-item {
+        padding: 10px 0;
+        position: relative;
+        label {
+            font-weight: normal;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .form-label {
+            display: block !important;
+        }
+        .material-element-label {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            span {
+                font-weight: 600;
+            }
+        }
+        .material-element-container {
+            border: 1px solid #cecece;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #0000001F;
+            .vertical-middle {
+                align-self: center;
+                // text-align: center
+            }
+        }
+        .rich-text-editor-container {
+            border: 1px solid #cecece;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .required-container {
+            border-color: #ff0000;
+        }
+        .form-group {
+            .option-inline {
+                display: inline-block !important;
+                margin-right: 10px;
+            }
+            a {
+                cursor: pointer;
+            }
+            input[type='date'] {
+                height: 42px;
+            }
+            .m-signature-pad {
+                position: relative;
+                width: auto;
+            }
+            .react-star-rating {
+                display: block;
+            }
+            .checkbox-label,
+            .radio-label {
+                font-weight: normal;
+                display: block;
+            }
+            .label-required {
+                margin-left: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-configserver
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-configserver
+  template:
+    metadata:
+      labels:
+        app: api-configserver
+    spec:
+      containers:
+        - name: api-configserver
+          image: registry.gitlab.com/ratnakumarn/api-configserver:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9012
+          env:
+            - name: PORT
+              value: "9012"
+      imagePullSecrets:
+      - name: gitlab-auth          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-configserver
+  namespace: dev
+spec:
+  type: NodePort
+  ports:
+    - port: 9012
+      targetPort: 9012
+      nodePort: 30856
+  selector:
+    app: api-configserver

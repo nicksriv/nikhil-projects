@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "lib": [
+      "es6"
+    ],
+    "paths": {
+      "@app/screen/*": ["screen/*"],
+      "@app/res/*": ["res/*"],
+      "@app/store/*": ["store/*"],
+      "@app/config/*": ["config/*"],
+      "@app/helper/*": ["helper/*"],
+      "@app/navigator/*": ["navigator/*"],
+      "@app/component/*": ["component/*"],
+      "@app/container/*": ["container/*"],
+      "@app/util/*": ["util/*"],
+      "@app/FormElements/*": ["../FormElements/*"]
+
+    }
+  },
+  "include": ["src"]
+}

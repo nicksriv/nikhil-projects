@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-screen-builderservice
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-screen-builderservice
+  template:
+    metadata:
+      labels:
+        app: api-screen-builderservice
+    spec:
+      containers:
+        - name: api-screen-builderservice
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/screenbuilder_prod:latest
+          imagePullPolicy: 'Always'
+          ports:
+            - containerPort: 8091
+          env:
+            - name: PORT
+              value: "8091"
+      imagePullSecrets:
+      - name: ecr-v5prod-auth
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-screen-builderservice
+  namespace: prod
+spec:
+  ports:
+    - port: 8091
+  selector:
+    app: api-screen-builderservice

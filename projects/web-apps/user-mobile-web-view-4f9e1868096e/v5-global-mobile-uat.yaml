@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v5-global-mobile
+  namespace: uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v5-global-mobile
+  template:
+    metadata:
+      labels:
+        app: v5-global-mobile
+    spec:
+      containers:
+        - name: v5-global-mobile
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/mobile_ui:latest
+          #          image: registry.gitlab.com/wavelabs/v5-global:latest
+          imagePullPolicy: Always
+          tty: true
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+      imagePullSecrets:
+        - name: ecr-uat-auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: v5-global-mobile
+  namespace: uat
+spec:
+  ports:
+    - port: 3000
+  selector:
+    app: v5-global-mobile

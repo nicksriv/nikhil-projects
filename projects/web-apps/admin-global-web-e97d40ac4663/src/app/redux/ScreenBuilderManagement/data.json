@@ -1,0 +1,119 @@
+[
+    {
+        "icon": "EventAvailableIcon",
+        "moduleName": "Attendance",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "IndeterminateCheckBoxIcon ",
+        "moduleName": "My Attendance",
+        "parentModuleName": "Attendance",
+        "rolesMapped": [
+            "Sales Representative"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "IndeterminateCheckBoxIcon ",
+        "moduleName": "Leaves",
+        "parentModuleName": "Attendance",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "IndeterminateCheckBoxIcon",
+        "moduleName": "Team Attendance",
+        "parentModuleName": "Attendance",
+        "rolesMapped": [
+            "Store Manager"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "DescriptionIcon",
+        "moduleName": "Task Management",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Freelancers"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "ModelTrainingIcon",
+        "moduleName": "Training & Quiz",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers",
+            "Data"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "AssignmentTurnedInIcon",
+        "moduleName": "Schedule Management",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers",
+            "Data",
+            "Data",
+            "Data"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "AssessmentIcon",
+        "moduleName": "Program Tracking",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers"
+        ],
+        "status": "Active"
+    },
+    {
+        "icon": "StarsRoundedIcon",
+        "moduleName": "Reward Management",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers",
+            "Data",
+            "Data",
+            "Data",
+            "Data",
+            "Data"
+        ],
+        "status": "Inactive"
+    },
+    {
+        "icon": "AssessmentTwoToneIcon",
+        "moduleName": "Reports",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Store Manager",
+            "Admin",
+            "Data",
+            "Data",
+            "Data",
+            "Data",
+            "Data",
+            "Data"
+        ],
+        "status": "Drafted"
+    }
+]

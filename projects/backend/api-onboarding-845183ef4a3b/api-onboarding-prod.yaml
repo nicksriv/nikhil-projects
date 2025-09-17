@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-onboarding
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-onboarding
+  template:
+    metadata:
+      labels:
+        app: api-onboarding
+    spec:
+      spec:
+      volumes:
+        - name: my-vol
+          hostPath:
+            path: /storage
+      containers:
+        - name: api-onboarding
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/onboarding_prod:latest
+          imagePullPolicy: 'Always'
+          volumeMounts:
+            - name: my-vol
+              mountPath: /var
+          ports:
+            - containerPort: 8090
+          env:
+            - name: PORT
+              value: "8090"
+      imagePullSecrets:
+      - name: ecr-v5prod-auth        
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-onboarding
+  namespace: prod
+spec:
+  ports:
+    - port: 8090
+  selector:
+    app: api-onboarding

@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-freelancer-vendor-service
+  namespace: uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-freelancer-vendor-service
+  template:
+    metadata:
+      labels:
+        app: api-freelancer-vendor-service
+    spec:
+      spec:
+      volumes:
+        - name: my-vol
+          hostPath:
+            path: /storage
+      containers:
+        - name: api-freelancer-vendor-service
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/freelancer-vendor-api:latest
+          imagePullPolicy: 'Always'
+          volumeMounts:
+            - name: my-vol
+              mountPath: /var
+          ports:
+            - containerPort: 9000
+          env:
+            - name: PORT
+              value: "9000"
+      imagePullSecrets:
+      - name: ecr-uat-auth        
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-freelancer-vendor-service
+  namespace: uat
+spec:
+#  type: NodePort
+  ports:
+    - port: 9000
+#      targetPort: 8090
+#      nodePort: 30850
+  selector:
+    app: api-freelancer-vendor-service

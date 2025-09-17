@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v5-global-web
+  namespace: uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v5-global-web
+  template:
+    metadata:
+      labels:
+        app: v5-global-web
+    spec:
+      containers:
+        - name: v5-global-web
+          image: 392288302288.dkr.ecr.ap-south-1.amazonaws.com/web_ui:latest
+          imagePullPolicy: Always
+          tty: true
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+      imagePullSecrets:
+      - name: gitlab-auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: v5-global-web
+  namespace: uat
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30852
+  selector:
+    app: v5-global-web

@@ -1,0 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.brandpulse.fv.app.disputes.enums;
+
+/**
+ *
+ * @author ts
+ */
+public enum DisputeResolver {
+    CLIENT,ADMIN
+    
+}

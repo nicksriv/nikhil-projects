@@ -1,0 +1,129 @@
+[
+    {
+        "icon": "EventAvailableIcon",
+        "moduleName": "Attendance",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager"
+        ],
+        "status": "Active",
+        "id": 1
+    },
+    {
+        "icon": "IndeterminateCheckBoxIcon ",
+        "moduleName": "My Attendance",
+        "parentModuleName": "Attendance",
+        "rolesMapped": [
+            "Sales Representative"
+        ],
+        "status": "Active",
+        "id": 2
+    },
+    {
+        "icon": "IndeterminateCheckBoxIcon ",
+        "moduleName": "Leaves",
+        "parentModuleName": "Attendance",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager"
+        ],
+        "status": "Active",
+        "id": 3
+    },
+    {
+        "icon": "IndeterminateCheckBoxIcon",
+        "moduleName": "Team Attendance",
+        "parentModuleName": "Attendance",
+        "rolesMapped": [
+            "Store Manager"
+        ],
+        "status": "Active",
+        "id": 4
+    },
+    {
+        "icon": "DescriptionIcon",
+        "moduleName": "Task Management",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Freelancers"
+        ],
+        "status": "Active",
+        "id": 5
+    },
+    {
+        "icon": "ModelTrainingIcon",
+        "moduleName": "Training & Quiz",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers",
+            "Data"
+        ],
+        "status": "Active",
+        "id": 6
+    },
+    {
+        "icon": "AssignmentTurnedInIcon",
+        "moduleName": "Schedule Management",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers",
+            "Data",
+            "Data",
+            "Data"
+        ],
+        "status": "Active",
+        "id": 7
+    },
+    {
+        "icon": "AssessmentIcon",
+        "moduleName": "Program Tracking",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers"
+        ],
+        "status": "Active",
+        "id": 8
+    },
+    {
+        "icon": "StarsRoundedIcon",
+        "moduleName": "Reward Management",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Sales Representative",
+            "Store Manager",
+            "Freelancers",
+            "Data",
+            "Data",
+            "Data",
+            "Data",
+            "Data"
+        ],
+        "status": "Inactive",
+        "id": 9
+    },
+    {
+        "icon": "AssessmentTwoToneIcon",
+        "moduleName": "Reports",
+        "parentModuleName": "",
+        "rolesMapped": [
+            "Store Manager",
+            "Admin",
+            "Data",
+            "Data",
+            "Data",
+            "Data",
+            "Data",
+            "Data"
+        ],
+        "status": "Drafted",
+        "id": 10
+    }
+]

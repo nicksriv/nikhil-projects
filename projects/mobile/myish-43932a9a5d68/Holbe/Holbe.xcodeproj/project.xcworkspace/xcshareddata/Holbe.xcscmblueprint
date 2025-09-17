@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E59F06BA5B8668B5E340C5EA8B4AB3A6DFD38FA3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D59A063976BFC094A5A2FF0E0AFBD21A7303F5F0" : 0,
+    "E59F06BA5B8668B5E340C5EA8B4AB3A6DFD38FA3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D33974EC-4D3C-4857-B862-4FBCB0E4474C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D59A063976BFC094A5A2FF0E0AFBD21A7303F5F0" : "",
+    "E59F06BA5B8668B5E340C5EA8B4AB3A6DFD38FA3" : "Holbe\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Holbe",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Holbe.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/nicksriv\/workspace.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D59A063976BFC094A5A2FF0E0AFBD21A7303F5F0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/venusvinayak\/holbenew.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E59F06BA5B8668B5E340C5EA8B4AB3A6DFD38FA3"
+    }
+  ]
+}

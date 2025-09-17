@@ -1,0 +1,9 @@
+<svg id="Component_402_9" data-name="Component 402 – 9" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_2274" data-name="Rectangle 2274" width="24" height="24" fill="none"/>
+  <g id="add_Graph" transform="translate(2 2)" opacity="0.38">
+    <path id="Path_5657" data-name="Path 5657" d="M0,0H20V20H0Z" fill="none"/>
+    <path id="Path_5659" data-name="Path 5659" d="M17,7H14V6H4V20H18V10H17Z" transform="translate(-1.6 -2.4)" opacity="0.3"/>
+    <path id="Path_5661" data-name="Path 5661" d="M5.63,2.581V9.7a.4.4,0,0,1-.488.4,4.057,4.057,0,0,1,0-7.906A.4.4,0,0,1,5.63,2.581Zm.819,0V5.328a.4.4,0,0,0,.4.4H9.591a.4.4,0,0,0,.4-.492A4.052,4.052,0,0,0,6.941,2.185a.4.4,0,0,0-.492.4Zm0,4.368V9.7a.4.4,0,0,0,.492.4A4.056,4.056,0,0,0,9.99,7.034a.408.408,0,0,0-.4-.492H6.856a.411.411,0,0,0-.407.407Z" transform="translate(3 4.825)"/>
+    <path id="Path_5660" data-name="Path 5660" d="M16.571,3.429V1H14.952V3.429H12.524V5.048h2.429v2.42h1.619V5.048H19V3.429ZM14.952,16.381H3.619V5.048h8.1V3.429h-8.1A1.624,1.624,0,0,0,2,5.048V16.381A1.624,1.624,0,0,0,3.619,18H14.952a1.624,1.624,0,0,0,1.619-1.619v-8.1H14.952Z"/>
+  </g>
+</svg>

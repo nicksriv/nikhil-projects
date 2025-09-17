@@ -1,0 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.brandpulse.fv.api.dto;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/**
+ *
+ * @author Suhail Tamboli
+ */
+@Getter
+@Setter
+@NoArgsConstructor
+public class OnboardingVerifyOTPRequestDto {
+    
+    @NotBlank
+    @Pattern(message = "Please provide valid mobile", regexp = "^[0-9]+\\d{1,14}$")
+    private String mobile;
+    
+    @NotBlank
+    private String mobileOTP;
+    
+    @NotBlank
+    @Pattern(message = "Please provide valid email", regexp = "([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)")
+    private String email;
+    
+    @NotBlank
+    private String emailOTP;
+}

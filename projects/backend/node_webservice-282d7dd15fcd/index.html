@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Socket.IO chat</title>
+        <style>
+        * {
+          font-family: cursive !important; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+        form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+        form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+        #messages, ul { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
+        #login  {
+        width: 200px;
+        height: 147px;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        background-color: #E7E7E7;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
+        padding:14px;
+        }
+        #private , #online{
+           width: 300px;
+        height: auto;
+        position: fixed;
+        top: 40px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        background-color: #AC5507;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
+        padding:14px;
+          color: #fff;
+  font-family: cursive;
+  font-size: 16px;
+        display:none;
+        }
+#private {
+   right: auto;
+  left: 100px;
+    transition: all .1s cubic-bezier(0.38, -50.87, 0.78, 50.91);
+  transform: translate3d(1px,0,0);
+}
+#private.buzz {
+transform: translate3d(0px,0,0);
+}
+        #online {
+          
+          right: 100px;
+  left: auto;
+        }
+        ul {
+          
+          width:100%;
+          list-style-type: none !important;
+        }
+        ul > li {
+            border-radius: 5px;
+  padding: 5px 5px 5px 15px;
+  margin-top: 5px;
+
+        }
+        ul > li:nth-child(odd) {
+          background: rgba(255, 192, 192, 0.32);
+        }
+        ul > li:nth-child(even) {
+         
+        }
+        #login input {
+        width: 100%;
+        box-shadow: inset 0px 0px 1px 1px rgba(0, 78, 188, 0.4);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        }
+        #login button {
+        width: 100%;
+        background-color: #009AFF;
+        color: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 2px 2px rgba(255,255,255,0.4);
+        outline:none !important;
+        }
+        #login button:hover, #login button:focus, #login button:active {
+        width: 100%;
+        background-color: #009AFF;
+        color: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 2px 2px rgba(0,255,255,0.4);
+        }
+        #private form {
+             width: 100%;
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+        }
+         #private form button {
+            width: 29%;
+  background-color: #48A3CE;
+  border-radius: 5px;
+  color: #fff;
+
+         }
+          #private form input {
+            width:70%;
+            border-radius: 5px;
+
+          }
+          #privateu, #onlineu {
+            height:500px;
+          } 
+          ul {
+            overflow-y:scroll;
+          }
+          ul::-webkit-scrollbar {
+      width: 8px;
+}
+
+          ul::-webkit-scrollbar-track {
+      background-color: rgba(255, 255, 255, 0.18);
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+ul::-webkit-scrollbar-thumb {
+       background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+} /* this will style the thumb, ignoring the track */
+ 
+ul::-webkit-scrollbar-button {
+      background-color: rgba(255, 255, 255, 0.18);
+      border-radius: 5px 5px 0 0;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+ul::-webkit-scrollbar-corner {
+      background-color: black;
+}
+        </style>
+    </head>
+    <body>
+      <audio id='aud' >
+  <source src="./audio/horse.ogg" type="audio/ogg">
+  <source src="./audio/horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+        <form id='login' >
+            <input id="user" type="text" value="papri"/>
+            <input id="pass" type="password" value="test1122"/>
+            <button type="submit">Go</button>
+        </form>
+        
+    <ul id="messages"></ul>
+    <form action="">
+        <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+    <div id='private'>
+    <ul id='privateu'>
+
+
+    </ul >
+   <form action="" id='privateForm'>
+        <input id="txt" autocomplete="off" /><button type='submit'>Send</button>
+    </form></div>
+     <div id='online'>
+    <ul id='onlineu'>
+
+
+    </ul>
+  </div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+    var a = document.getElementById('aud');
+        var socket, currHash, userName;
+       
+        $('#login').submit (    function (e)
+        {
+
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5,
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+            console.log(xmlhttp.responseText);
+            if(JSON.parse(xmlhttp.responseText).status == 'Success') {
+              document.getElementById('login').style.display = 'none';
+              
+              document.getElementById('private').style.display = 'block';
+              document.getElementById('online').style.display = 'block';
+              document.getElementById('messages').style.display = 'block';
+            }
+            userName = $("#user")[0].value; 
+            connect(JSON.parse(xmlhttp.responseText).hash);
+            }
+        }
+        xmlhttp.open("POST","./login",true);
+        xmlhttp.setRequestHeader("Content-type","application/json");
+        console.log($("#user"));
+        xmlhttp.send(JSON.stringify({'user': $("#user")[0].value, 'pass':$("#pass")[0].value}));
+          e.preventDefault();
+    });
+    function connect(hash) {
+    socket = io('',{query:'auth_token=' + hash});
+    /*$('form').submit(function(){
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+    });*/
+currHash = hash;
+
+    socket.on('chat message', function(msg){
+    $('#messages').append($('<li>').text(msg));
+        });
+        socket.on('connected users', function(msg){
+          console.log(msg);
+        $('#messages').append($('<li>').text(msg));
+            });
+
+
+socket.on('connected users', function(msg){
+          console.log(msg);
+          a.play();
+          msg = JSON.parse(msg);
+          console.dir($('#onlineu'));
+           $('#onlineu')[0].innerHTML = "";
+          msg.forEach(function(m){
+            if(currHash != m.hash) {
+        $('#onlineu').append($('<li>').text(m.name));
+      }
+            });
+    
+          });
+ socket.on('disconnect', function (msg) {
+            console.log('Disconnecting ' + userName + " " + msg);
+            userCount--;
+            //socket.emit('hello from socket');
+            //io.emit('chat message', msg);
+        });
+
+        socket.on('connect', function (msg) {
+            console.log('connecting ' + userName + " " + msg);
+
+        });
+        socket.on('error', function (msg) {
+            console.log('error ' + userName + " " + msg);
+
+        });
+        socket.on('reconnect', function (msg) {
+            console.log('reconnected ' + userName + " " + msg);
+
+        });
+        socket.on('reconnect_attempt', function (msg) {
+            console.log('reconnect_attempt ' + userName + " " + msg);
+
+        });
+        socket.on('reconnecting', function (msg) {
+            console.log('reconnecting ' + userName + " " + msg);
+
+        });
+        socket.on('reconnect_error', function (msg) {
+            console.log('reconnect_error ' + userName + " " + msg);
+
+        });
+        socket.on('reconnect_failed', function (msg) {
+            console.log('reconnect_failed ' + userName + " " + msg);
+
+        });
+
+var toHash;
+socket.on('private chat', function(msg){
+          console.log(msg);
+          a.play();
+          msg = JSON.parse(msg);
+          toHash = msg.hash;
+          //msg.forEach(function(m){
+        $('#privateu').append($('<li>').text(msg.msg));
+          // });
+    $('#private')[0].classList.toggle('buzz');
+          });
+$('#privateForm')[0].onsubmit = function(){
+  console.log("private submit");
+    socket.emit('private chat', JSON.stringify({msg:$('#txt').val(), hash:toHash}));
+    $('#privateu').append($('<li>').text($('#txt').val()));
+
+    $('#txt').val('');
+    return false;
+    };
+            }
+
+        
+            </script>
+        </body>
+    </html>

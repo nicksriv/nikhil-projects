@@ -1,0 +1,20 @@
+ <svg className={classes.svgIcons} id="Component_146_27" data-name="Component 146 – 27" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <rect id="Rectangle_2274" data-name="Rectangle 2274" width="24" height="24" fill="none" />
+                                            <g id="group_add_black_24dp" transform="translate(2 2)">
+                                                <g id="Group_6486" data-name="Group 6486">
+                                                    <rect id="Rectangle_2492" data-name="Rectangle 2492" width="20" height="20" fill="none" />
+                                                    <rect id="Rectangle_2493" data-name="Rectangle 2493" width="20" height="20" fill="none" />
+                                                </g>
+                                                <g id="Group_6488" data-name="Group 6488" transform="translate(0 3.333)">
+                                                    <g id="Group_6487" data-name="Group 6487">
+                                                        <path id="Path_5536" data-name="Path 5536" d="M7,15c-2.25,0-4.833,1.075-5,1.675V17.5H12v-.833C11.833,16.075,9.25,15,7,15Z" transform="translate(-0.333 -5.833)" opacity={`${hovered ? '1' : '0.38'}`} />
+                                                        <circle id="Ellipse_360" data-name="Ellipse 360" cx="1.667" cy="1.667" r="1.667" transform="translate(5 1.667)" opacity={`${hovered ? '1' : '0.38'}`} />
+                                                        <path id="Path_5537" data-name="Path 5537" d="M21.333,8.667V7H19.667V8.667H18v1.667h1.667V12h1.667V10.333H23V8.667Z" transform="translate(-3 -4.5)" opacity={`${hovered ? '1' : '0.5'}`} />
+                                                        <path id="Path_5538" data-name="Path 5538" d="M7.333,10.667A3.333,3.333,0,1,0,4,7.333,3.332,3.332,0,0,0,7.333,10.667Zm0-5A1.667,1.667,0,1,1,5.667,7.333,1.672,1.672,0,0,1,7.333,5.667Z" transform="translate(-0.667 -4)" opacity={`${hovered ? '1' : '0.5'}`} />
+                                                        <path id="Path_5539" data-name="Path 5539" d="M6.667,13C4.442,13,0,14.117,0,16.333v2.5H13.333v-2.5C13.333,14.117,8.892,13,6.667,13Zm5,4.167h-10v-.825c.167-.6,2.75-1.675,5-1.675s4.833,1.075,5,1.667Z" transform="translate(0 -5.5)" opacity={`${hovered ? '1' : '0.5'}`} />
+                                                        <path id="Path_5540" data-name="Path 5540" d="M12.51,4.05a4.984,4.984,0,0,1,0,6.583,3.317,3.317,0,0,0,0-6.583Z" transform="translate(-2.085 -4.008)" opacity={`${hovered ? '1' : '0.5'}`} />
+                                                        <path id="Path_5541" data-name="Path 5541" d="M16.53,13.83a3.531,3.531,0,0,1,1.225,2.642v2.5h1.667v-2.5C19.422,15.263,18.1,14.38,16.53,13.83Z" transform="translate(-2.755 -5.638)" opacity={`${hovered ? '1' : '0.5'}`} />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>

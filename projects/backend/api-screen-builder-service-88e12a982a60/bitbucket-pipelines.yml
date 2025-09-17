@@ -1,0 +1,83 @@
+image: amazon/aws-cli:2.9.4  # Use an image that includes AWS CLI
+
+pipelines:
+  branches:
+    pre-prod:
+      - step:
+          name: Build, Push, and Deploy to ECS
+          services:
+            - docker
+          script:
+            # Set environment variables
+            - export AWS_REGION=ap-south-1
+            - export ECR_URI=779846800118.dkr.ecr.ap-south-1.amazonaws.com/api-screenbuilder-uat
+            - export ECS_CLUSTER=nocode-app
+            - export TASK_DEFINITION_FAMILY=api-screenbuilder-uat
+
+            # Login to AWS ECR
+            - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_URI
+            
+            # Build Docker image
+            - docker build -t $TASK_DEFINITION_FAMILY .
+            
+            # Tag and push Docker image to ECR
+            - docker tag $TASK_DEFINITION_FAMILY:latest $ECR_URI:latest
+            - docker push $ECR_URI:latest
+
+            # Create new ECS Task Definition revision
+            - |
+              TASK_DEFINITION_JSON=$(cat <<EOF
+              {
+                "family": "$TASK_DEFINITION_FAMILY",
+                "containerDefinitions": [
+                  {
+                    "name": "$TASK_DEFINITION_FAMILY-container",
+                    "image": "$ECR_URI:latest",
+                    "cpu": 0,
+                    "portMappings": [
+                      {
+                        "containerPort": 80,
+                        "hostPort": 80,
+                        "protocol": "tcp"
+                      }
+                    ],
+                    "essential": true,
+                    "logConfiguration": {
+                      "logDriver": "awslogs",
+                      "options": {
+                        "awslogs-group": "/ecs/$TASK_DEFINITION_FAMILY",
+                        "awslogs-region": "$AWS_REGION",
+                        "awslogs-stream-prefix": "ecs"
+                      }
+                    }
+                  }
+                ],
+                "taskRoleArn": "arn:aws:iam::779846800118:role/ecsTaskExecutionRole",
+                "executionRoleArn": "arn:aws:iam::779846800118:role/ecsTaskExecutionRole",
+                "networkMode": "awsvpc",
+                "requiresCompatibilities": ["FARGATE"],
+                "cpu": "2048",
+                "memory": "4096"
+              }
+              EOF
+              )
+              NEW_TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json "$TASK_DEFINITION_JSON" --query 'taskDefinition.taskDefinitionArn' --output text)
+
+            # Update ECS Service to use the new task definition
+            - aws ecs update-service --cluster $ECS_CLUSTER --service $TASK_DEFINITION_FAMILY --task-definition $NEW_TASK_DEF_ARN
+            
+            # Success message
+            - echo "Deployment successful! New task definition registered and ECS service updated."
+
+      - step:
+          name: Wait and Register Target
+          script:
+            # Wait for 2 minutes
+            - echo "Waiting for 2 minutes before executing the script..."
+            - sleep 120
+            
+            # Ensure the script is executable
+            - chmod +x register-targets.sh
+            
+            # Run the script
+            - ./register-targets.sh

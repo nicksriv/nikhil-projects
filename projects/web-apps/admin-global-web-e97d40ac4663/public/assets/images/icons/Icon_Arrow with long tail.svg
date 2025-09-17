@@ -1,0 +1,7 @@
+<svg id="Component_189_13" data-name="Component 189 – 13" xmlns="http://www.w3.org/2000/svg" width="77.5" height="14" viewBox="0 0 77.5 14">
+  <line id="Line_3" data-name="Line 3" x1="73" transform="translate(0 7.5)" fill="none" stroke="#2C3E93" stroke-width="1"/>
+  <g id="Polygon_1" data-name="Polygon 1" transform="translate(77.5) rotate(90)">
+    <path d="M 13.03966903686523 9.5 L 0.9603310227394104 9.5 L 7 0.8719014525413513 L 13.03966903686523 9.5 Z" stroke="none"/>
+    <path d="M 7 1.743788719177246 L 1.920652389526367 9 L 12.07934761047363 9 L 7 1.743788719177246 M 7 0 L 14 10 L 0 10 L 7 0 Z" stroke="none" fill="#000"/>
+  </g>
+</svg>

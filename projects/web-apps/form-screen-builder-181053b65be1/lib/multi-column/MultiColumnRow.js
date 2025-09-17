@@ -1,0 +1,160 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Four_Column_Row = exports.Three_Column_Row = exports.Two_Column_Row = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _componentHeader = _interopRequireDefault(require("../form-elements/component-header"));
+
+var _componentLabel = _interopRequireDefault(require("../form-elements/component-label"));
+
+var _dustbin = _interopRequireDefault(require("./dustbin"));
+
+var _ItemTypes = _interopRequireDefault(require("../ItemTypes"));
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+var accepts = [_ItemTypes["default"].BOX, _ItemTypes["default"].CARD];
+
+var MultiColumnRow = /*#__PURE__*/function (_React$Component) {
+  (0, _inherits2["default"])(MultiColumnRow, _React$Component);
+
+  var _super = _createSuper(MultiColumnRow);
+
+  function MultiColumnRow() {
+    (0, _classCallCheck2["default"])(this, MultiColumnRow);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2["default"])(MultiColumnRow, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          controls = _this$props.controls,
+          data = _this$props.data,
+          editModeOn = _this$props.editModeOn,
+          getDataById = _this$props.getDataById,
+          setAsChild = _this$props.setAsChild,
+          removeChild = _this$props.removeChild,
+          seq = _this$props.seq,
+          className = _this$props.className,
+          index = _this$props.index;
+      var childItems = data.childItems,
+          pageBreakBefore = data.pageBreakBefore;
+      var baseClasses = 'SortableItem rfb-item';
+
+      if (pageBreakBefore) {
+        baseClasses += ' alwaysbreak';
+      }
+
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        className: baseClasses
+      }, /*#__PURE__*/_react["default"].createElement(_componentHeader["default"], this.props), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+        className: "row"
+      }, childItems.map(function (x, i) {
+        return /*#__PURE__*/_react["default"].createElement("div", {
+          key: "".concat(i, "_").concat(x || '_'),
+          className: className
+        }, controls ? controls[i] : /*#__PURE__*/_react["default"].createElement(_dustbin["default"], {
+          style: {
+            width: '100%'
+          },
+          data: data,
+          accepts: accepts,
+          items: childItems,
+          col: i,
+          parentIndex: index,
+          editModeOn: editModeOn,
+          _onDestroy: function _onDestroy() {
+            return removeChild(data, i);
+          },
+          getDataById: getDataById,
+          setAsChild: setAsChild,
+          seq: seq
+        }));
+      }))));
+    }
+  }]);
+  return MultiColumnRow;
+}(_react["default"].Component);
+
+var Two_Column_Row = function Two_Column_Row(_ref) {
+  var data = _ref.data,
+      class_name = _ref.class_name,
+      rest = (0, _objectWithoutProperties2["default"])(_ref, ["data", "class_name"]);
+  var className = class_name || 'col-md-6';
+
+  if (!data.childItems) {
+    // eslint-disable-next-line no-param-reassign
+    data.childItems = [null, null];
+    data.isContainer = true;
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(MultiColumnRow, (0, _extends2["default"])({}, rest, {
+    className: className,
+    data: data
+  }));
+};
+
+exports.Two_Column_Row = Two_Column_Row;
+
+var Three_Column_Row = function Three_Column_Row(_ref2) {
+  var data = _ref2.data,
+      class_name = _ref2.class_name,
+      rest = (0, _objectWithoutProperties2["default"])(_ref2, ["data", "class_name"]);
+  var className = class_name || 'col-md-4';
+
+  if (!data.childItems) {
+    // eslint-disable-next-line no-param-reassign
+    data.childItems = [null, null, null];
+    data.isContainer = true;
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(MultiColumnRow, (0, _extends2["default"])({}, rest, {
+    className: className,
+    data: data
+  }));
+};
+
+exports.Three_Column_Row = Three_Column_Row;
+
+var Four_Column_Row = function Four_Column_Row(_ref3) {
+  var data = _ref3.data,
+      class_name = _ref3.class_name,
+      rest = (0, _objectWithoutProperties2["default"])(_ref3, ["data", "class_name"]);
+  var className = class_name || "col-md-3";
+
+  if (!data.childItems) {
+    // eslint-disable-next-line no-param-reassign
+    data.childItems = [null, null, null, null];
+    data.isContainer = true;
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(MultiColumnRow, (0, _extends2["default"])({}, rest, {
+    className: className,
+    data: data
+  }));
+};
+
+exports.Four_Column_Row = Four_Column_Row;

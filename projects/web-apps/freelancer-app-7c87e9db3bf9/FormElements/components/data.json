@@ -1,0 +1,584 @@
+{
+  "subModuleName": "620256e23d745f193df1ed63",
+  "subModuleId": "620256e23d745f193df1ed63",
+  "clientId": "61e6a03f7c19db373d15bea2",
+  "moduleId": "620256ba3d745f193df1ed62",
+  "roles": [],
+  "name": "Screen2",
+  "form": [
+    {
+      "id": "74F98F0D-229F-43CE-84EB-EEBBBFD8F1A9",
+      "element": "Section_Header",
+      "type": "Section Header",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Section Header",
+        "sectionHeaderBGColor": "#202020"
+      },
+      "fieldName": "section_header_974E296A-4021-43FD-BFCB-DCFBF1C0E0ED",
+      "label": "Section Header"
+    },
+    {
+      "id": "B885162F-0EBC-4383-80D7-6B6B15C06C4A",
+      "element": "Tiles",
+      "type": "Tiles",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Tiles",
+        "tileProperties": [
+          {
+            "ID": "Tile ID- COMPONENT001",
+            "key": "Tile ID- COMPONENT001",
+            "title": "",
+            "textRule": "",
+            "shortTextValue": "",
+            "numberTextValue": 0,
+            "text": "",
+            "rule": "interlinked",
+            "tilesType": "",
+            "component": "",
+            "componentOnScreenSource": "Tile ID- COMPONENT001",
+            "componentOnScreenMethod": "",
+            "componentOnScreenTarget": "Tile ID- COMPONENT001",
+            "tilesColor": "custom",
+            "tilesRandomColor": "#d67a24",
+            "action": []
+          }
+        ],
+        "columns": 1,
+        "spacing": 1,
+        "charecterLimit": 20
+      },
+      "fieldName": "tiles_6997391B-7CFC-4A2E-9B90-86D14B0248E8",
+      "label": "Tiles",
+      "dirty": false
+    },
+    {
+      "id": "8755D233-3657-499D-93E5-B37048625137",
+      "element": "Signature",
+      "type": "Signature",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Signature"
+      },
+      "fieldName": "signature_BB9F68B3-581B-4B72-BA2B-2F541D68E151",
+      "label": "Signature"
+    },
+    {
+      "id": "74698F49-A8E2-4488-8413-52864D1A6516",
+      "element": "Barcode_Scanner",
+      "type": "Barcode Scanner",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Barcode Scanner",
+        "isPreAvail": false,
+        "is360Avail": false,
+        "isBarcodeAvail": true,
+        "isPhotoAvail": false,
+        "is360PhotoUpload": false,
+        "isPrePhotoUpload": false,
+        "isPostPhotoUpload": false,
+        "isCommentsAvail": false,
+        "isCommentPopAvail": true,
+        "isPostAvail": false,
+        "isPhotoUpload": false,
+        "showLine": false
+      },
+      "fieldName": "barcode_scanner_F71C26DB-E875-45FA-859A-F341DBEBE2DD",
+      "label": "Barcode Scanner"
+    },
+    {
+      "id": "039CAA83-CCA4-4C5A-8A17-37FBBD828292",
+      "element": "Date_Picker",
+      "type": "Date Picker",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Date Picker",
+        "dateFormat": "dd-MM-yyyy",
+        "defaultDate": "2022-02-08T12:18:58.155Z",
+        "defaultDateOptions": "current",
+        "formatSeparator": "hyphen",
+        "disablePastDates": true,
+        "readOnly": false
+      },
+      "fieldName": "datepickerE29BEAF0-F61E-4265-8CDA-51457F1BACE9",
+      "label": "Date Picker",
+      "dirty": false
+    },
+    {
+      "id": "E08A21FC-7CF6-47ED-B9C3-1976DB36202D",
+      "element": "Configurable_List",
+      "type": "Input Table",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Input Table",
+        "optionsText": "Header Item 1 : text: Enter text",
+        "minimalRows": "1",
+        "maximalRows": "0",
+        "labelAdd": "Add Row",
+        "labelRemove": "Remove",
+        "headerActionLabel": "Actions",
+        "headerList": [
+          {
+            "label": "",
+            "headerId": "headerId001",
+            "required": false,
+            "type": ""
+          }
+        ],
+        "deleteRow": false,
+        "viewRow": false,
+        "editRow": false
+      },
+      "fieldName": "configurable_listAAE857C9-B567-49D1-87FC-BDDF76F4C4DB",
+      "label": "Input Table"
+    },
+    {
+      "id": "7D8A2FC6-B53D-454B-9D12-052285347368",
+      "element": "Check_List",
+      "type": "Check List",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Check List",
+        "optionsText": "Option 1\nOption 2",
+        "columns": 0
+      },
+      "fieldName": "checklist_input_043BDC57-4C50-4F28-8F39-A9F00051727C",
+      "label": "Check List",
+      "checkListOptions": [
+        {
+          "value": "option_1",
+          "label": "Option 1",
+          "key": "checkboxes_option_A1C3ED5F-9EC8-45BB-AE6B-9024386A6BC3"
+        },
+        {
+          "value": "option_2",
+          "label": "Option 2",
+          "key": "checkboxes_option_72FA0465-2D4B-46C0-A954-005E2733A589"
+        }
+      ]
+    },
+    {
+      "id": "A3CE35DA-7D0C-47B4-BB4F-4FD3019C08B0",
+      "element": "Email",
+      "type": "Email",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Email"
+      },
+      "fieldName": "email_input_68072AB3-2092-4AD3-95D9-4576CDAD06FA",
+      "label": "Email"
+    },
+    {
+      "id": "AB6B8A14-33BC-4A64-B750-708A7AFF0CE4",
+      "element": "Video",
+      "type": "Video",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Video",
+        "isVideoAvail": true,
+        "isVideoUpload": true,
+        "isVideoLink": false,
+        "videoLink": "",
+        "recordedVideo": "",
+        "uploadedVideo": ""
+      },
+      "fieldName": "video9AEC38EB-3125-46B4-968A-CE5AF9E874C8",
+      "label": "Video"
+    },
+    {
+      "id": "488C42A7-B0A4-4D0C-BC4C-68B4E1E7F873",
+      "element": "Photo",
+      "type": "Photo",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Photo",
+        "cameraFacingOptions": "front",
+        "isPhotoAvail": true,
+        "isPhotoUpload": true,
+        "tapedrop": false,
+        "isDistToBuilding": false,
+        "distanceToBuildingRadius": "",
+        "isTargetAzimuthAngle": false,
+        "isEditPhoto": false,
+        "isShowHelp": false,
+        "isCommentsAvail": false,
+        "isRadioGroup": false,
+        "helpText": "",
+        "sampleS3Uri": ""
+      },
+      "fieldName": "photo4CA7FBA5-BF32-40DB-A2C2-D4E9A3DC9FBB",
+      "label": "Photo",
+      "singleChoiceOptions": [
+        {
+          "value": "option_1",
+          "label": "Option 1",
+          "key": "radiobuttons_option_2ED3EEBF-DE19-4197-9991-2F1E02BF9588"
+        },
+        {
+          "value": "option_2",
+          "label": "Option 2",
+          "key": "radiobuttons_option_DAE4062F-9786-4C79-A7BC-37DF2F0B1AF1"
+        }
+      ]
+    },
+    {
+      "id": "FD1B455D-D9DF-40E2-B85D-66664FC40899",
+      "element": "Dropdown",
+      "type": "Dropdown",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Dropdown",
+        "showEmptyTextOption": false
+      },
+      "fieldName": "dropdown_input_8A224278-CE69-4F3E-846A-A100F7EFF00B",
+      "label": "Dropdown",
+      "dropDownOptions": []
+    },
+    {
+      "id": "FD1B455D-D9DF-40E2-B85D-66664FC40899",
+      "element": "Mapping_Dropdown",
+      "type": "Mapping_Dropdown",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Mapping_Dropdown",
+        "showEmptyTextOption": false
+      },
+      "fieldName": "mapping_Dropdown_input_8A224278-CE69-4F3E-846A-A100F7EFF00B",
+      "label": "Mapping_Dropdown",
+      "dropDownOptions": []
+    },
+    {
+      "id": "2A98BF8B-60C2-4F27-AC9B-E8B4109CA93B",
+      "element": "Location_Coordinates",
+      "type": "Location Map",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Location Map",
+        "addressLabel": "Address",
+        "displayMapOption": "Map+Text",
+        "editable": false
+      },
+      "fieldName": "location_coordinates9946ADB2-0647-4DBD-B1AA-EC787A7AA7E3",
+      "label": "Location Map"
+    },
+    {
+      "id": "B0F9DE18-E38B-4375-927D-4E603A6B976D",
+      "element": "Location_Coordinates",
+      "type": "Location Map",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Location Map",
+        "addressLabel": "Address",
+        "displayMapOption": "Map+Text",
+        "editable": false
+      },
+      "fieldName": "location_coordinates1329D571-EC6D-4A70-A98A-99759EEBEAD1",
+      "label": "Location Map"
+    },
+    {
+      "id": "03F3FCE3-771C-4F12-A760-138FD42D725C",
+      "element": "Button_Radios",
+      "type": "Button Radio",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Button Radio",
+        "optionsText": "Option 1[OnHover Option 1]\nOption 2\nOption 3",
+        "columns": 0,
+        "spacing": 1,
+        "buttonThemeColor": "red"
+      },
+      "fieldName": "buttonradioDB7DD9AA-C61D-4F83-B6E9-E73ECA61F81E",
+      "label": "Button Radio",
+      "buttonRadioOptions": [
+        {
+          "value": "option_1",
+          "label": "Option 1",
+          "key": "button_radios_option_9DF44677-EF0D-4400-B3FF-494FC5836E63",
+          "hoverText": "OnHover Option 1"
+        },
+        {
+          "value": "option_2",
+          "label": "Option 2",
+          "key": "button_radios_option_01E107B4-D493-4B33-B6C4-DBF021F16E8A",
+          "hoverText": ""
+        },
+        {
+          "value": "option_3",
+          "label": "Option 3",
+          "key": "button_radios_option_25CE9920-B5FE-45D8-9631-66DFFDA1B866",
+          "hoverText": ""
+        }
+      ]
+    },
+    {
+      "id": "596CADB9-D7B0-49E7-BB2F-C062CCFCC4CF",
+      "element": "Single_Choice",
+      "type": "Single Choice",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Single Choice",
+        "isSingleChoiseOption": true,
+        "isSpreadToColumn": false,
+        "columns": 0
+      },
+      "fieldName": "singlechoice_1ABF59C9-830F-442B-A435-335BF4F05A1A",
+      "label": "Question text",
+      "singleChoiceOptions": [
+        {
+          "value": "option_1",
+          "label": "Option 1",
+          "key": "radiobuttons_option_F3CBA1C9-AF7B-4C7A-824C-2B921AA2D0BA"
+        },
+        {
+          "value": "option_2",
+          "label": "Option 2",
+          "key": "radiobuttons_option_0BF9B57E-D67F-4D82-AAE8-F7A35B81015B"
+        },
+        {
+          "value": "other",
+          "label": "Other",
+          "key": "radiobuttons_option_786960E2-A96E-43EE-BC59-9511679F3210"
+        }
+      ]
+    },
+    {
+      "id": "7CF5D0FD-DD61-4044-9822-E8423D914D28",
+      "element": "Short_Text",
+      "type": "Short Text Field",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Short Text Field",
+        "isMasked": false,
+        "maskedValue": "",
+        "validation": "None",
+        "charLimit": 120
+      },
+      "fieldName": "shortText_2BE4BC6E-432C-443A-94F5-A7402CE9C253",
+      "label": "Short Text Field 1234"
+    },
+    {
+      "id": "7CF5D0FD-DD61-4044-9822-E8423D914D23",
+      "element": "Number",
+      "type": "Number",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Number",
+        "isMasked": false,
+        "maskedValue": "",
+        "validation": "None",
+        "charLimit": 120
+      },
+      "fieldName": "number_2BE4BC6E-432C-443A-94F5-A7402CE9C253",
+      "label": "Number"
+    },
+    {
+      "id": "2F011805-C4A9-4939-A652-5FC18F8E0043",
+      "element": "Button",
+      "type": "Buttons",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Buttons",
+        "Hyperlink": ""
+      },
+      "fieldName": "button56C84F7C-0027-439C-BDB0-D1770DADF6AA",
+      "label": "Button"
+    },
+    {
+      "id": "7288ACBC-0019-46F7-93A0-FE509BFC66A2",
+      "element": "Long_Text",
+      "type": "Long Text Field",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Long Text Field",
+        "isNumberLimit": true,
+        "min": 0,
+        "max": 1,
+        "limitType": "Characters",
+        "limitTypeOptions": "Words,Characters",
+        "isLimitEntry": false,
+        "editorMode": "Plain_Text",
+        "editorModeOptions": "Plain_Text,Rich_Text",
+        "validationType": "None",
+        "validationOptions": "None,Alphabetic,AlphaNumeric,Currency,Cyrillic,Email,Numeric,URL"
+      },
+      "fieldName": "long_text_59E09E57-D7A5-410F-AB07-1A300C3000FD",
+      "label": "Long Text Field wdsvsd"
+    },
+    {
+      "id": "923A8BDA-B2CE-4272-80BC-2E3CBB147C86",
+      "element": "Configurable_List",
+      "type": "Input Table",
+      "fieldVariant": "outlined",
+      "inputFieldSize": "large",
+      "textAlignment": "left",
+      "buttonType": "primary",
+      "customOptions": {
+        "required": true,
+        "checked": true,
+        "dataTable": false,
+        "filtered": false,
+        "componentType": "Input Table",
+        "optionsText": "Header Item 1 : text: Enter text",
+        "minimalRows": "1",
+        "maximalRows": "0",
+        "labelAdd": "Add Row",
+        "labelRemove": "Remove",
+        "headerActionLabel": "Actions",
+        "headerList": [
+          {
+            "label": "",
+            "headerId": "headerId001",
+            "required": false,
+            "type": ""
+          }
+        ],
+        "deleteRow": false,
+        "viewRow": false,
+        "editRow": false
+      },
+      "fieldName": "configurable_list9C1AC27A-D77F-4FAF-82EA-2B9319989D92",
+      "label": "Input Table"
+    }
+  ]
+}

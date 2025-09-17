@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-screen-builderservice
+  namespace: uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-screen-builderservice
+  template:
+    metadata:
+      labels:
+        app: api-screen-builderservice
+    spec:
+      containers:
+        - name: api-screen-builderservice
+          image: registry.gitlab.com/v5globalqa/screen_uat:latest
+          imagePullPolicy: 'Always'
+          ports:
+            - containerPort: 8091
+          env:
+            - name: PORT
+              value: "8091"
+      imagePullSecrets:
+      - name: gitlab-auth
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-screen-builderservice
+  namespace: uat
+spec:
+  type: NodePort
+  ports:
+    - port: 8091
+      targetPort: 8091
+      nodePort: 30858
+  selector:
+    app: api-screen-builderservice

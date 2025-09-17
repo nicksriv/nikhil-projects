@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex" />
+    <timestamp key="AWS_DATE" datePattern="yyyyMMdd"/>
+    
+    
+    <!--<PatternLayout pattern="${LOG_PATTERN}" />-->
+    <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+<!--            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>-->
+            <pattern>${LOG_PATTERN}</pattern>
+        </layout>
+    </appender>
+    
+    
+    <appender name="CloudWatchAppender" class="ca.pjer.logback.AwsLogsAppender">
+        <logRegion>ap-south-1</logRegion>
+        <logGroupName>brandpulse-freelancer-${hostName}</logGroupName>
+        <logStreamName>log-fv-${AWS_DATE}</logStreamName>
+        <maxBatchLogEvents>200</maxBatchLogEvents>
+        <maxFlushTimeMillis>30000</maxFlushTimeMillis>
+        <maxBlockTimeMillis>5000</maxBlockTimeMillis>
+        <layout>
+            <!-- possible layout pattern -->
+            <!--<pattern>[%thread] %level %logger{20} - %msg%n%xThrowable</pattern>-->
+            <pattern>${LOG_PATTERN}</pattern>
+        </layout>
+    </appender>
+        
+        
+<!--    <logger name="com.brandpulse.fv" level="all">
+        <appender-ref ref="CloudWatchAppender"/>
+        <appender-ref ref="ConsoleAppender" />
+    </logger>-->
+
+    <root level="info">
+        <appender-ref ref="CloudWatchAppender"/>
+        <appender-ref ref="ConsoleAppender" />
+    </root>
+        
+</Configuration>

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: v5-global-mobile
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: v5-global-mobile
+  template:
+    metadata:
+      labels:
+        app: v5-global-mobile
+    spec:
+      containers:
+        - name: v5-global-mobile
+          image: registry.gitlab.com/ratnakumarn/v5-global-mobile:latest
+#          image: registry.gitlab.com/wavelabs/v5-global:latest
+          imagePullPolicy: Always
+          tty: true
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+      imagePullSecrets:
+      - name: gitlab-auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: v5-global-mobile
+  namespace: dev
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30854
+  selector:
+    app: v5-global-mobile
